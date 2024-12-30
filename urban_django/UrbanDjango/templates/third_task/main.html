@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Главная страница</title>
+  <style>
+    body {
+      background-color: #2E3440;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    a {
+      color: #D8DEE9;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 25px;
+      transition: color 0.3s;
+    }
+
+    a:hover {
+      color: #88C0D0; /* Nord Ice */
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href="{% url 'main' %}">главная</a>
+    <a href="{% url 'shop' %}">магаз</a>
+    <a href="{% url 'cart' %}">корзина</a>
+  </nav>
+</body>
+
+</html>
+
