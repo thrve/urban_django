@@ -1,0 +1,27 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block pagename %}страница{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'task4/styles.css' %}">
+</head>
+
+<body>
+    <nav>
+        {% block menu %}
+        <a href="{% url 'main' %}">главная</a>
+        <a href="{% url 'shop' %}">магаз</a>
+        <a href="{% url 'cart' %}">корзина</a>
+        {% endblock %}
+    </nav>
+    <div>
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+
+</html>
