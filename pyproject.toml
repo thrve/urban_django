@@ -9,6 +9,16 @@ readme = "README.md"
 python = "^3.12"
 django = "^5.1.4"
 
+[tool.ruff]
+line-length = 120
+ignore = ["F401"]
+
+[tool.ruff.flake8-quotes]
+docstring-quotes = "single"
+inline-quotes = "single"
+
+[tool.ruff.format]
+quote-style = "single"
 
 [build-system]
 requires = ["poetry-core"]
