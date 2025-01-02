@@ -3,8 +3,10 @@
 
 from django.shortcuts import render
 
+
 def main_view(request):
     return render(request, 'fourth_task/main.html')
+
 
 def shop_view(request):
     items = {
@@ -14,6 +16,6 @@ def shop_view(request):
     }
     return render(request, 'fourth_task/shop.html', {'items': list(items.values())})
 
+
 def cart_view(request):
     return render(request, 'fourth_task/cart.html')
-

@@ -10,4 +10,3 @@ urlpatterns = [
     path('shop/', shop_view, name='shop'),
     path('cart/', cart_view, name='cart'),
 ]
-
