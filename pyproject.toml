@@ -9,6 +9,9 @@ readme = "README.md"
 python = "^3.12"
 django = "^5.1.4"
 
+[tool.poetry.group.dev.dependencies]
+litecli = "^1.13.2"
+
 [tool.ruff]
 line-length = 120
 ignore = ["F401"]
