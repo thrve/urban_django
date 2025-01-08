@@ -7,15 +7,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block pagename %}страница{% endblock %}</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'task4/styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'task1/styles.css' %}">
 </head>
 
 <body>
     <nav>
         {% block menu %}
-        <a href="{% url 'main' %}">главная</a>
-        <a href="{% url 'task4_shop' %}">магаз</a>
-        <a href="{% url 'task4_cart' %}">корзина</a>
+        <a href="{% url 'task1_main' %}">главная</a>
+        <a href="{% url 'task1_shop' %}">магаз</a>
+        <a href="{% url 'task1_cart' %}">корзина</a>
+        <a href="{% url 'task1_sign_up' %}">зарегаться</a>
         {% endblock %}
     </nav>
     <div>

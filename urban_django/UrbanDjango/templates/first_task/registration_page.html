@@ -1,0 +1,21 @@
+{% extends 'first_task/menu.html' %}
+
+{% block pagename %}регистрация{% endblock %}
+
+{% block content %}
+<h1>регистрация</h1>
+<form method="POST" class="registration-form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">зарегаться</button>
+</form>
+
+{% if error %}
+<p>{{ error }}</p>
+{% endif %}
+
+{% if message %}
+<p>{{ message }}</p>
+{% endif %}
+
+{% endblock %}

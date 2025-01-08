@@ -7,6 +7,6 @@ from .views import main_view, shop_view, cart_view
 
 urlpatterns = [
     path('', main_view, name='main'),
-    path('shop/', shop_view, name='shop'),
-    path('cart/', cart_view, name='cart'),
+    path('shop/', shop_view, name='task4_shop'),
+    path('cart/', cart_view, name='task4_cart'),
 ]

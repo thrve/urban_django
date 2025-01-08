@@ -1,0 +1,35 @@
+{% extends 'first_task/menu.html' %}
+
+{% block pagename %}магаз{% endblock %}
+
+{% block content %}
+<h1>магаз</h1>
+<table>
+    <thead>
+        <tr>
+            <th>название</th>
+            <th>описание</th>
+            <th>цена</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for value in items %}
+        <tr>
+            <td>{{ value.title }}</td>
+            <td>{{ value.description }}</td>
+            <td>{{ value.cost }}</td>
+            <td class="age-limited">
+                {% if value.age_limited %}
+                    18+ 
+                {% else %}
+                    &nbsp;
+                {% endif %}
+            </td>
+            <td>
+                <button>купить</button>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
