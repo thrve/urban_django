@@ -1,8 +1,5 @@
-#!/usr/bin/env python
-
-
 from django.contrib import admin
-from .models import Game, Buyer
+from .models import Game, Buyer, News
 
 
 @admin.register(Game)
@@ -20,3 +17,11 @@ class BuyerAdmin(admin.ModelAdmin):
     search_fields = ('name',)
     list_per_page = 30
     readonly_fields = ('balance',)
+
+
+@admin.register(News)
+class NewsAdmin(admin.ModelAdmin):
+    list_display = ('title', 'date')
+    list_filter = ('date',)
+    search_fields = ('title',)
+    list_per_page = 20

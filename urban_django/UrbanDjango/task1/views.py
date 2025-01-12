@@ -2,8 +2,10 @@
 
 
 from django.shortcuts import render
+from django.utils import timezone
+from django.core.paginator import Paginator
 from .forms import UserRegister
-from .models import Buyer, Game
+from .models import Buyer, Game, News
 
 
 def main_view(request):
@@ -52,3 +54,13 @@ def sign_up_by_django(request):
 
 def sign_up_by_html(request):
     return sign_up_by_django(request)
+
+
+def news(request):
+    news_list = News.objects.all().order_by('date')
+    for item in news_list:
+        item.date = timezone.localtime(item.date).strftime('%d %b %Y, %I:%M')
+    paginator = Paginator(news_list, 5)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'first_task/news.html', {'news': page_obj})

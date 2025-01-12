@@ -8,6 +8,7 @@ from .views import (
     cart_view,
     sign_up_by_django,
     sign_up_by_html,
+    news,
 )
 
 
@@ -16,5 +17,6 @@ urlpatterns = [
     path('shop/', shop_view, name='task1_shop'),
     path('cart/', cart_view, name='task1_cart'),
     path('sign_up/', sign_up_by_django, name='task1_sign_up'),
-    path('django_sign_up/', sign_up_by_html, name='django_sign_up'),
+    path('django_sign_up/', sign_up_by_html, name='task1_django_sign_up'),
+    path('news/', news, name='task1_news'),
 ]
