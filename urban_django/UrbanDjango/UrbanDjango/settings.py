@@ -14,6 +14,9 @@ from pathlib import Path
 import os
 
 server_ip = os.environ.get('IP')
+database = os.environ.get('PG_NAME')
+db_user = os.environ.get('PG_USER')
+db_password = os.environ.get('PG_PASSWORD')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -81,10 +84,21 @@ WSGI_APPLICATION = 'UrbanDjango.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': database,
+        'USER': db_user,
+        'PASSWORD': db_password,
+        'HOST': server_ip,
+        'PORT': '5432',
     }
 }
 

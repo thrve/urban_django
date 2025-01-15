@@ -8,9 +8,11 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.12"
 django = "^5.1.4"
+psycopg2-binary = "^2.9.10"
 
 [tool.poetry.group.dev.dependencies]
 litecli = "^1.13.2"
+pgcli = "^4.1.0"
 
 [tool.ruff]
 line-length = 120
